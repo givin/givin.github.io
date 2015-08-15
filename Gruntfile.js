@@ -216,6 +216,10 @@ module.exports = function (grunt) {
           },
         ]
       },
+      cname : {
+        src : "CNAME",
+        dest : paths.buildBase
+      },
       fonts: {
         files: [{
             expand: true,
@@ -231,7 +235,7 @@ module.exports = function (grunt) {
     'gh-pages': {
       options: {
         base: 'dist',
-        branch: 'gh-pages'
+        branch: 'master'
       },
       src: ['**']
     }
@@ -243,6 +247,6 @@ module.exports = function (grunt) {
   grunt.registerTask( 'dev', ['assemble', 'sass', 'postcss', 'copy', 'uglify','browserSync','watch' ] );
 
   // Build task
-  grunt.registerTask( 'build', ['assemble', 'sass', 'postcss', 'purifycss', 'gh-pages' ] );
+  grunt.registerTask( 'build', ['assemble', 'sass', 'postcss', 'purifycss','copy', 'gh-pages' ] );
 
 };
