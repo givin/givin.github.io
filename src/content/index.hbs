@@ -1,0 +1,21 @@
+---
+title: index page
+writings: page
+layout : page.hbs
+showNav: false
+---
+<div class="landing-page">
+    <div class="logo"><img src="/hood/images/logo.png" alt=""></div>
+    <h1>givin.io</h1>
+    <div class="title-desc">A listing of non-profit jobs</div>
+
+    <div class="job-container">
+        {{#each jobs}}
+            <div class="job-item">
+                <h3 class="job-item-title">{{title}}</h3>
+                <div class="job-company">{{company}}</div>
+                <div class="job-description">{{description}}</div>
+                <a href="{{link}}"><div class="job-view-button">VIEW JOB</div></a>
+            </div>
+        {{/each}}
+    </div>

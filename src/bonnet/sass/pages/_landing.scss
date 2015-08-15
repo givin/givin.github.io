@@ -1,0 +1,69 @@
+/* ==========================================================================
+   CSS STYLES FOR LANDING PAGE
+   ========================================================================== */
+.landing-page {
+  position: relative;
+  overflow: hidden;
+  padding: 10vh 10%;
+  .logo {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h1 {
+    font-family: $type-title;
+    margin: .2em 0;
+    font-weight: 300;
+  }
+  .job-container {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+    width: 600px;
+    float: left;
+    .job-item {
+      position: relative;
+      overflow: hidden;
+      margin: 4em 0;
+      float: left;
+      .job-item-title {
+        position: relative;
+        overflow: hidden;
+        font-weight: 700;
+        margin: 0;
+      }
+      .job-company {
+        @extend %type-s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+        color: lighten( #3c3c3c, 40% );
+      }
+      .job-description {
+        position: relative;
+        overflow: hidden;
+        padding: 1em 0;
+        line-height: 1.5;
+        color: #3c3c3c;
+      }
+      .job-view-button {
+        @extend %type-xs;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #4B6982;
+        border: 1px solid darken( #4B6982, 10% );
+        position: relative;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        width: 120px;
+        text-align: center;
+      }
+    }
+  }
+
+}
