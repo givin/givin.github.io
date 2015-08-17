@@ -13,8 +13,9 @@ showNav: false
         {{#each jobs}}
             <div class="job-item">
                 <h3 class="job-item-title">{{title}}</h3>
+                <h4 class="job-item-role">{{jobTitle}}</h4>
                 <div class="job-company">{{company}}</div>
-                <div class="job-description">{{description}}</div>
+                <div class="job-description">{{jobDescription}}</div>
                 <a href="{{link}}"><div class="job-view-button">VIEW JOB</div></a>
             </div>
         {{/each}}
