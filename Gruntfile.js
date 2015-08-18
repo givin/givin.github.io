@@ -166,6 +166,10 @@ module.exports = function (grunt) {
       },
       grunt: {
           files: ['Gruntfile.js']
+      },
+      data: {
+        files : '<%= paths.sourceAssets %>/data/*.json',
+        tasks : ['assemble']
       }
     },
     browserSync: {
