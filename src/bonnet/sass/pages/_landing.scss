@@ -8,7 +8,7 @@
   .logo {
     position: relative;
     overflow: hidden;
-    width: 200px;
+    width: 100px;
     img {
       max-width: 100%;
     }
@@ -22,8 +22,8 @@
   .job-container {
     position: relative;
     overflow: hidden;
-    margin: 20px 0;
-    width: 600px;
+    padding: 20px 5% 20px 0;
+    width: 60%;
     float: left;
     .job-item {
       position: relative;
@@ -64,6 +64,62 @@
         text-align: center;
       }
     }
+  }
+  .job-post-container {
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    padding: 30px 4%;
+    border: 5px solid $border-blue;
+    background: $light-blue;
+    border-radius: 4px;
+    float: right;
+    margin-top: 50px;
+    .job-post-image {
+      @extend %type-l;
+      position: relative;
+      overflow: hidden;
+      color: darken( $border-blue, 15% );
+
+    }
+    .job-post-title {
+      position: relative;
+      overflow: hidden;
+      color: darken( $border-blue, 15% );
+      margin: 0;
+      font-family: $type-title;
+      font-weight: 300;
+    }
+    .job-post-text {
+      @extend %type-s;
+      position: relative;
+      overflow: hidden;
+      padding: 1em 0;
+    }
+    .job-post-button {
+      @extend %type-xs;
+      position: relative;
+      overflow: hidden;
+      width: 150px;
+      // margin: 0 auto;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      background: $blue-red;
+      border: 2px solid darken( $blue-red, 5% );
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 1em 0;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background: darken( $blue-red, 5% );
+        border-color: darken( $blue-red, 10% );
+      }
+
+    }
+
   }
 
 }
