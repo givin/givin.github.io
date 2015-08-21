@@ -65,22 +65,27 @@
       }
     }
   }
+}
+
+.side-container {
+  width: 35%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+  float: right;
   .job-post-container {
     position: relative;
     overflow: hidden;
-    width: 30%;
-    padding: 30px 4%;
+    padding: 30px 10%;
     border: 5px solid $border-blue;
     background: $light-blue;
     border-radius: 4px;
-    float: right;
-    margin-top: 50px;
+    margin: 50px 0;
     .job-post-image {
       @extend %type-l;
       position: relative;
       overflow: hidden;
       color: darken( $border-blue, 15% );
-
     }
     .job-post-title {
       position: relative;
@@ -119,7 +124,75 @@
       }
 
     }
-
   }
+  .job-role-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 5%;
+    background: #f1f1f1;
+    border: 5px solid darken( #f1f1f1, 5% );
+    .job-role-title {
+      position: relative;
+      overflow: hidden;
+      font-family: $type-title;
+      font-weight: 400;
+      margin: 0;
+      color: lighten( #3c3c3c, 10% );
+      padding: 1em 0;
+    }
+    .job-role-item {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      float: left;
+      clear: both;
+      padding: 1em 0;
+      border-bottom: 1px solid darken( #f1f1f1, 5% );
+      cursor: pointer;
+      .job-role-avatar {
+        width: 100px;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        opacity: 0.5;
+        img {
+          max-width: 100%;
+          display: inline;
+        }
+        .avatar-male {
+          display: none;
+        }
+        .avatar-female {
+          display: block;
+        }
+        &:hover {
+          .avatar-male {
+            display: block;
+          }
+          .avatar-female {
+            display: none;
+          }
+        }
+      }
+      .job-role-info {
+        @extend %type-s;
+        position: relative;
+        overflow: hidden;
+        // float: left;
+        .job-role-info-title {
+          position: relative;
+          overflow: hidden;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 700;
+        }
+        .job-role-subtext {
+          @extend %type-xs;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
 
 }
