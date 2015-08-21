@@ -1,4 +1,29 @@
 {
-    "websiteTitle" : "dennis",
-    "websiteDesc"  : "A simple theme based on Assemble static site generator"
+    "websiteTitle" : "givin.io",
+    "websiteDesc"  : "A listing of non-profit jobs",
+    "categories" : [{
+            "name" : "Manager",
+            "description" : "You are into managerial and adminstrative work.",
+            "maleImagePath" : "/hood/images/manager-male.png",
+            "femaleImagePath" : "/hood/images/manager-female.png"
+        },
+        {
+            "name" : "Designer",
+            "description" : "You are a UI designer, graphics designer, illustrator, print designer etc",
+            "maleImagePath" : "/hood/images/designer-male.png",
+            "femaleImagePath" : "/hood/images/designer-female.png"
+        },
+        {
+            "name" : "Developer",
+            "description" : "You are a tech guy doing frontend, backend, mobile apps, dev-ops etc",
+            "maleImagePath" : "/hood/images/developer-male.png",
+            "femaleImagePath" : "/hood/images/developer-female.png"
+        },
+        {
+            "name" : "Volunteer",
+            "description" : "You are just looking to help in any way. Volunteers, fellowships, event management etc",
+            "maleImagePath" : "/hood/images/volunteer-male.png",
+            "femaleImagePath" : "/hood/images/volunteer-female.png"
+        }
+    ]
 }

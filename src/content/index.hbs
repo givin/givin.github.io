@@ -5,9 +5,11 @@ layout : page.hbs
 showNav: false
 ---
 <div class="landing-page">
-    <div class="logo"><img src="/hood/images/logo.png" alt=""></div>
-    <h1>givin.io</h1>
-    <div class="title-desc">A listing of non-profit jobs</div>
+    <header class="landing-header">
+        <div class="logo"><img src="/hood/images/logo.png" alt=""></div>
+        <h1>givin.io</h1>
+        <div class="title-desc">A listing of non-profit jobs</div>
+    </header>
 
     <div class="job-container">
         {{#each jobs}}
@@ -18,52 +20,55 @@ showNav: false
                 <div class="job-description">{{jobDescription}}</div>
                 <a href="{{link}}" target="_blank"><div class="job-view-button">VIEW JOB</div></a>
             </div>
+            {{#compare @index 3}}
+                <div class="mobile-prompt-category js-prompt-cat-container">
+                    <div class="prompt-cat-bar">
+                        <div class="prompt-cat-text">Filter jobs to find the one that suits you.</div>
+                        <div class="prompt-cat-button js-prompt-cat-button">FILTER JOBS</div>
+                                            </div>
+                    <div class="prompt-cat-content js-prompt-cat-content">
+                        {{#each ../../config.categories}}
+                            <div class="job-role-item">
+                                <div class="job-role-avatar">
+                                    <img class="avatar-male" src="{{maleImagePath}}" alt="">
+                                    <img class="avatar-female" src="{{femaleImagePath}}" alt="">
+                                </div>
+                                <div class="job-role-info">
+                                    <div class="job-role-info-title">{{name}}</div>
+                                    <div class="job-role-subtext">{{description}}</div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/compare}}
+            {{#compare @index 8}}
+                <div class="mobile-prompt-posting js-prompt-posting-container">
+                    <div class="prompt-posting-bar">
+                        <div class="prompt-posting-text">Looking for how to list a job ? It's free.</div>
+                        <div class="prompt-posting-button">
+                            POST A JOB
+                        </div>
+                    </div>
+                </div>
+            {{/compare}}
         {{/each}}
     </div>
     <aside class="side-container">
-        <div class="job-role-container">
+        <div class="job-role-container js-cat-container">
             <h3 class="job-role-title">Filter jobs based <br />on job role</h3>
-            <div class="job-role-item">
-                <div class="job-role-avatar">
-                    <img class="avatar-male" src="/hood/images/designer-male.png" alt="">
-                    <img class="avatar-female" src="/hood/images/designer-female.png" alt="">
+            {{#each config.categories}}
+                <div class="job-role-item">
+                    <div class="job-role-avatar">
+                        <img class="avatar-male" src="{{maleImagePath}}" alt="">
+                        <img class="avatar-female" src="{{femaleImagePath}}" alt="">
+                    </div>
+                    <div class="job-role-info">
+                        <div class="job-role-info-title">{{name}}</div>
+                        <div class="job-role-subtext">{{description}}</div>
+                    </div>
                 </div>
-                <div class="job-role-info">
-                    <div class="job-role-info-title">Designer</div>
-                    <div class="job-role-subtext">You are a UI designer, graphics designer, illustrator, print designer etc</div>
-                </div>
-            </div>
-            <div class="job-role-item">
-                <div class="job-role-avatar">
-                    <img class="avatar-male" src="/hood/images/manager-male.png" alt="">
-                    <img class="avatar-female" src="/hood/images/manager-female.png" alt="">
-                </div>
-                <div class="job-role-info">
-                    <div class="job-role-info-title">Manager</div>
-                    <div class="job-role-subtext">You are into managerial and adminstrative work.</div>
-                </div>
-            </div>
-            <div class="job-role-item">
-                <div class="job-role-avatar">
-                    <img class="avatar-male" src="/hood/images/developer-male.png" alt="">
-                    <img class="avatar-female" src="/hood/images/developer-female.png" alt="">
-                </div>
-                <div class="job-role-info">
-                    <div class="job-role-info-title">Developer</div>
-                    <div class="job-role-subtext">You are a tech guy doing frontend, backend, mobile apps, dev-ops etc</div>
-                </div>
-            </div>
-            <div class="job-role-item">
-                <div class="job-role-avatar">
-                    <img class="avatar-male" src="/hood/images/volunteer-male.png" alt="">
-                    <img class="avatar-female" src="/hood/images/volunteer-female.png" alt="">
-                </div>
-                <div class="job-role-info">
-                    <div class="job-role-info-title">Volunteer</div>
-                    <div class="job-role-subtext">You are just looking to help in any way. Volunteers, fellowships, event management etc</div>
-                </div>
-            </div>
-
+            {{/each}}
         </div>
         <div class="job-post-container">
             <div class="job-post-image">

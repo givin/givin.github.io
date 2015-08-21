@@ -4,26 +4,28 @@
 .landing-page {
   position: relative;
   overflow: hidden;
-  padding: 10vh 10%;
-  .logo {
+  .landing-header {
     position: relative;
     overflow: hidden;
-    width: 100px;
-    img {
-      max-width: 100%;
+    padding: 2em 2rem;
+    .logo {
+      position: relative;
+      overflow: hidden;
+      width: 100px;
+      img {
+        max-width: 100%;
+      }
     }
-  }
-
-  h1 {
-    font-family: $type-title;
-    margin: .2em 0;
-    font-weight: 300;
+    h1 {
+      font-family: $type-title;
+      margin: .2em 0;
+      font-weight: 300;
+    }
   }
   .job-container {
     position: relative;
     overflow: hidden;
     padding: 20px 5% 20px 0;
-    width: 60%;
     float: left;
     .job-item {
       position: relative;
@@ -63,15 +65,48 @@
         width: 120px;
         text-align: center;
       }
+      @include media( '<=500px' ) {
+        padding: 1em 2rem;
+      }
+    }
+    @include media( '<=500px' ) {
+      padding: 20px 0;
+    }
+  }
+  @include media( '>1200px' ) {
+    padding: 10vh 10%;
+    .job-container {
+      width: 60%;
+    }
+    .side-container {
+      margin-top: 50px;
+      width: 35%;
+    }
+  }
+  @include media ( '<=1200px', '>=800px' ) {
+    padding: 10vh 5%;
+    .job-container {
+      width: 55%;
+    }
+    .side-container {
+      margin-top: 50px;
+      width: 40%;
+    }
+  }
+  @include media( '<=500px' ) {
+    padding: 10vh 0;
+    .job-container {
+      width: 100%;
+    }
+    .side-container {
+      width: 100%;
     }
   }
 }
 
 .side-container {
-  width: 35%;
   position: relative;
   overflow: hidden;
-  margin-top: 50px;
   float: right;
   .job-post-container {
     position: relative;
@@ -193,6 +228,117 @@
       }
     }
   }
+}
 
+.mobile-prompt-category {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  .prompt-cat-bar {
+    position: relative;
+    overflow: hidden;
+    padding: 2em 1em;
+    border-top: 2px solid $border-blue;
+    border-bottom: 2px solid $border-blue;
+    background: $light-blue;
+    .prompt-cat-text {
+      @extend %type-s;
+      font-family: $type-title;
+      position: relative;
+      overflow: hidden;
+      float: left;
+      max-width: 60%;
+    }
+    .prompt-cat-button {
+      @extend %type-xs;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      background: $blue-red;
+      color: white;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      border: 2px solid darken( $blue-red, 5% );
+      width: 150px;
+      float: right;
+      padding: 0.5em 1em;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+  .prompt-cat-content {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    clear: both;
+    .job-role-item {
+      width: 50%;
+      position: relative;
+      float: left;
+      overflow: hidden;
+      padding: 1em;
+      height: 20em;
+      text-align: center;
+      .job-role-avatar {
+        position: relative;
+        overflow: hidden;
+        height: 8em;
+        margin: 0 auto;
+        img {
+          max-height: 100%;
+        }
+        .avatar-male {
+          display: none;
+        }
+      }
+      .job-role-info {
+        .job-role-info-title {
+          position: relative;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+        .job-role-subtext {
+          @extend %type-xs;
+        }
+      }
+    }
+  }
+}
 
+.mobile-prompt-posting {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: $yellow;
+  border-top: 2px solid darken( $yellow, 5% );
+  border-bottom: 2px solid darken( $yellow, 5% );
+  .prompt-posting-bar {
+    position: relative;
+    overflow: hidden;
+    padding: 2em 1em;
+    .prompt-posting-text {
+      @extend %type-s;
+      color: #3c3c3c;
+      font-family: $type-title;
+      max-width: 50%;
+      float: left;
+    }
+    .prompt-posting-button {
+      @extend %type-xs;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      background: $blue-red;
+      color: white;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      border: 2px solid darken( $blue-red, 5% );
+      width: 150px;
+      float: right;
+      padding: 0.5em 1em;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
 }

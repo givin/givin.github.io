@@ -1,0 +1,12 @@
+{{#each ../../config.categories}}
+    <div class="job-role-item">
+        <div class="job-role-avatar">
+            <img class="avatar-male" src="{{maleImagePath}}" alt="">
+            <img class="avatar-female" src="{{femaleImagePath}}" alt="">
+        </div>
+        <div class="job-role-info">
+            <div class="job-role-info-title">{{name}}</div>
+            <div class="job-role-subtext">{{description}}</div>
+        </div>
+    </div>
+{{/each}}
