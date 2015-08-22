@@ -55,11 +55,18 @@ module.exports = function (grunt) {
           drop_console: true
         }
       },
-      my_target: {
+      libs: {
         files: {
-          '<%= paths.buildAssets %>/js/vendor.min.js': ['<%= paths.sourceAssets %>/js/vendor/jquery.js', '<%= paths.sourceAssets %>/js/vendor/*.js'],
-          '<%= paths.buildAssets %>/js/source.min.js': ['<%= paths.sourceAssets %>/js/source/*.js']
+          '<%= paths.buildAssets %>/js/compiled/libs.js': ['<%= paths.sourceAssets %>/js/vendor/jquery.js','<%= paths.sourceAssets %>/js/vendor/**/*.js']
         }
+      },
+      pages: {
+        files : [{
+          expand: true,
+          cwd: '<%= paths.sourceAssets %>/js/source',
+          src: '**/*.js',
+          dest: '<%= paths.buildAssets %>/js'
+        }]
       }
     },
     /* assemble templating */

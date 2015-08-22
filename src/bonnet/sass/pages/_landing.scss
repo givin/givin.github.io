@@ -7,7 +7,6 @@
   .landing-header {
     position: relative;
     overflow: hidden;
-    padding: 2em 2rem;
     .logo {
       position: relative;
       overflow: hidden;
@@ -20,6 +19,9 @@
       font-family: $type-title;
       margin: .2em 0;
       font-weight: 300;
+    }
+    @include media( '<=500px' ) {
+      padding: 2em 2rem;
     }
   }
   .job-container {
@@ -228,6 +230,9 @@
       }
     }
   }
+  @include media( '<=500px' ) {
+    display: none;
+  }
 }
 
 .mobile-prompt-category {
@@ -271,6 +276,7 @@
     overflow: hidden;
     width: 100%;
     clear: both;
+    display: none;
     .job-role-item {
       width: 50%;
       position: relative;
@@ -302,6 +308,11 @@
           @extend %type-xs;
         }
       }
+    }
+  }
+  &[data-status="open"] {
+    .prompt-cat-content {
+      display: block;
     }
   }
 }
